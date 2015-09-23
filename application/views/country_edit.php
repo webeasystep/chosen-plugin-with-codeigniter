@@ -20,7 +20,7 @@
     <br/>
 
     <div class="content">
-        <?php echo form_open_multipart('country/admin_country/edit/' . $category->country_id) ?>
+        <?php echo form_open_multipart('admin_country/edit/' . $category->country_id) ?>
         <fieldset class="form boxStyle">
 
             <label for="category_name" class="label"><?php echo $this->lang->line('category_title'); ?></label>

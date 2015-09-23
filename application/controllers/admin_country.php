@@ -25,11 +25,11 @@ class Admin_country extends CI_Controller {
         $data['services'] = $this->country->get_service_dropdown();
 
         if ($this->form_validation->run() == false) {
-            $this->view('country_new',$data);
+            $this->load->view('country_new',$data);
         } else {
             $this->country->create();
             $this->session->set_flashdata('success_msg', $this->lang->line('success_msg'));
-            redirect('country/admin_country/');
+            redirect('admin_country/');
         }
     }
 
@@ -48,11 +48,11 @@ class Admin_country extends CI_Controller {
         $this->form_validation->set_rules('category_name', $this->lang->line('category_title'), 'trim|required|xss_clean|htmlspecialchars');
 
         if ($this->form_validation->run() == false) {
-            $this->view('country_edit', $data);
+            $this->load->view('country_edit', $data);
         } else {
             $this->country->update($id);
             $this->session->set_flashdata('success_msg', $this->lang->line('success_msg_edit_cat'));
-            redirect('country/admin_country/');
+            redirect('admin_country/');
         }
     }
 
